@@ -44,7 +44,9 @@
                         <x-menu-item icon="lucide.shield-check" title="Admin Panel" wire:navigate link="/admin" class="text-green-500" />
                     @endif
 
+                    <x-menu-item icon="lucide.house-plus" title="Post Your Property" wire:navigate link="/post-room" />
                     <x-menu-item icon="lucide.user-pen" title="Profile" wire:navigate link="/profile" />
+                    <x-menu-separator/>
                     @livewire('auth.logout')
                 </x-dropdown>
             @endauth

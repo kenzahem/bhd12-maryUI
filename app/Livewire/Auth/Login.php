@@ -26,6 +26,8 @@ class Login extends Component
             $this->info('Redirecting...');
             return redirect()->to('/profile');
         }
+            $this->error('Wrong Credentials!', position: 'toast-top toast-center');
+            return redirect()->back();
     }
 
     public function render()

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('credits')->default(0);
             $table->integer('role_id');
             $table->boolean('verified')->default(false);
             $table->string('name');

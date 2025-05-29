@@ -58,9 +58,9 @@
             <x-menu>
                 <x-menu-item title="Dashboard" icon="lucide.home" link="/admin" />
                 <x-menu-item title="Rooms" icon="lucide.bed" link="/admin/rooms" />
-                <x-menu-sub title="Settings" icon="o-cog-6-tooth">
-                    <x-menu-item title="Wifi" icon="o-wifi" link="####" />
-                    <x-menu-item title="Archives" icon="o-archive-box" link="####" />
+                <x-menu-sub title="Users" icon="o-cog-6-tooth">
+                    <x-menu-item title="Manage" icon="o-wifi" link="/admin/users" />
+                    <x-menu-item title="Add Credits" icon="o-archive-box" link="/admin/users/add-credits" />
                 </x-menu-sub>
             </x-menu>
         </x-slot:sidebar>
