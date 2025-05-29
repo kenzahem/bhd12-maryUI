@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->string('uid');
             $table->boolean('is_enabled')->default(true);
             $table->string('title');
             $table->string('short_desc');
