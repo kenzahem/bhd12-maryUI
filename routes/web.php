@@ -35,6 +35,7 @@ Route::middleware('VerifyRole', 'auth')->group( function(){
 
 });
 
+// USER-END
 Route::middleware('auth')->group(function(){
     Route::get('/profile', ProfileIndex::class);
     Route::get('/post-room', UserPost::class);

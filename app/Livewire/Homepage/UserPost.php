@@ -3,15 +3,19 @@
 namespace App\Livewire\Homepage;
 
 use App\Models\Room;
+use App\Models\User;
 use Mary\Traits\Toast;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class UserPost extends Component
 {
 
     use Toast;
+
+    public $uid = '';
 
     #[Validate('required')]
     public $title = '';
@@ -34,14 +38,17 @@ class UserPost extends Component
     #[Validate('required')]
     public $price = '';
 
-    public function createRoom()
+    public function createRoom(User $user)
     {
+        // Deduction value
+        $post_cred = 3;
 
         if(Auth::user()->credits >= 3){
 
             $this->validate();
 
             Room::create([
+                'uid' => Auth::user()->id,
                 'title' => $this->title,
                 'full_desc' => $this->full_desc,
                 'short_desc' => $this->short_desc,
@@ -51,16 +58,16 @@ class UserPost extends Component
                 'price' => $this->price,
 
             ]);
+
+            // Credit deduction
+            DB::table('users' ,$user->id)->decrement('credits', $post_cred);
+
             $this->reset();
             $this->success('Posted Successfully');
             return redirect()->back();
         }
             $this->warning('Not Enough Credits');
             return redirect()->back();
-
-
-
-
     }
 
     public function render()
