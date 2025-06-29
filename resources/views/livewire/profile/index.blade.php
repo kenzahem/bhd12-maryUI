@@ -1,4 +1,9 @@
 <div>
+    <x-header title="User Profile" >
+        <x-slot:middle class="!justify-end">
+            <x-button wire:navigate link="/profile/edit-profile" label="Edit Profile"  class="btn-outline" />
+        </x-slot:middle>
+    </x-header>
     <div class="grid grid-cols-2 gap-4">
         <x-card title="User Info" class="border border-accent-content col-auto">
             Name: {{ $name }} <br>

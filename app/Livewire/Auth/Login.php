@@ -23,7 +23,7 @@ class Login extends Component
         $this->validate();
 
         if(Auth::attempt(['email' => $this->email, 'password' => $this->password])){
-            $this->info('Redirecting...');
+            $this->info('Redirecting...', position: 'toast-top toast-center');
             return redirect()->to('/profile');
         }
             $this->error('Wrong Credentials!', position: 'toast-top toast-center');

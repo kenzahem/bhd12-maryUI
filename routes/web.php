@@ -14,6 +14,7 @@ use App\Livewire\Backend\Users\CreateUser;
 use App\Livewire\Profile\Index as ProfileIndex;
 use App\Livewire\Backend\Users\Table as UsersTable;
 use App\Livewire\Homepage\UserPost;
+use App\Livewire\Profile\UpdateInfo;
 
 // FRONTEND
 Route::get('/', Index::class);
@@ -39,4 +40,5 @@ Route::middleware('VerifyRole', 'auth')->group( function(){
 Route::middleware('auth')->group(function(){
     Route::get('/profile', ProfileIndex::class);
     Route::get('/post-room', UserPost::class);
+    Route::get('/profile/edit-profile', UpdateInfo::class);
 });

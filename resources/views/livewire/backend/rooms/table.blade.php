@@ -16,4 +16,3 @@
         </x-table>
     </x-card>
 </div>
-q

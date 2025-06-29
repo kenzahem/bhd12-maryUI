@@ -25,6 +25,7 @@ class Index extends Component
         $this->verified = Auth::user()->verified;
     }
 
+
     public function render()
     {
         return view('livewire.profile.index');
