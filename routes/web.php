@@ -22,7 +22,7 @@ Route::get('/rooms/browse', Browse::class);
 
 //AUTH
 Route::get('/login', Login::class)->name('login');
-Route::get('/logout', Logout::class);
+// Route::get('/logout', Logout::class);
 
 // BACKEND ADMIN
 Route::middleware('VerifyRole', 'auth')->group( function(){

@@ -9,7 +9,7 @@
         </x-slot:actions>
     </x-header>
         <x-card>
-            <div class="grid grid-cols-3 gap-3">
+            <div class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-3">
                 @foreach ($rooms as $room)
                 <x-card title="{{ $room->title }}" class="col border">
                     I am using slots here.

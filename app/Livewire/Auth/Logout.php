@@ -12,8 +12,8 @@ class Logout extends Component
 
     public function logoutUser()
     {
-        $this->info('Logging Out');
         Auth::logout();
+        $this->info('Logging Out');
         return redirect()->to('/');
     }
 

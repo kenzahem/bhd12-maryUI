@@ -16,7 +16,7 @@ class UserPost extends Component
     use Toast;
 
     #[Validate('required')]
-    public $uid = '';
+    public $uid;
 
     #[Validate('required')]
     public $title = '';

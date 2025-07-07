@@ -6,7 +6,7 @@
     </x-header>
     <x-card class="border-1 border-gray-400 shadow-lg" separator progress-indicator>
         <x-form wire:submit="createRoom" >
-            <x-input wire:model="uid" label="User Account" placeholder="{{ Auth::user()->name }}" disabled />
+            <x-input wire:model="uid" label="User Account" placeholder="{{ Auth::user()->name }}" />
             <x-input wire:model.live="title" label="Room Title" />
             <x-textarea wire:model.live="short_desc" label="Short Description" placeholder="Here ..." hint="Max 200 chars" rows="3" />
             <x-textarea wire:model.live="full_desc" label="Full Description" placeholder="Here ..." hint="Max 500 chars" rows="5" />
